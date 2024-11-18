@@ -1,12 +1,18 @@
 body {
     font-size: 1em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #fff0ab;
+    background-color: #fff6cb;
 }
 
 h1 {
     text-align: center;
     font-size: 300%;
+    border-style: solid;
+    margin-left: 31%;
+    margin-right: 31%;
+    border-radius: 20px;
+    background-color: lightblue;
+    border-width: 2px;
 }
 
 p {
