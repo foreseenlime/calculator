@@ -1,0 +1,4 @@
+TODO:
+
+- make so that you can add numbers with buttons instead of using window prompts
+- clean up some of the css + make it able to not break on different screen sizes
