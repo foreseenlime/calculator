@@ -7,12 +7,36 @@ const butt3 = document.getElementById("mybut3");
 const butt4 = document.getElementById("mybut4");
 const butt5 = document.getElementById("mybut5");
 
+
+document.getElementById("mybut").onclick = function() {
+    click()
+};
+document.getElementById("mybut1").onclick = function() {
+    click1()
+};
+document.getElementById("mybut2").onclick = function() {
+    click2()
+};
+document.getElementById("mybut3").onclick = function() {
+    click3()
+};
+document.getElementById("mybut4").onclick = function() {
+    click4()
+};
+document.getElementById("mybut5").onclick = function() {
+    click5()
+};
+
+
+/*
 butt.addEventListener("click", click);
 butt1.addEventListener("click", click1);
 butt2.addEventListener("click", click2);
 butt3.addEventListener("click", click3);
 butt4.addEventListener("click", click4);
 butt5.addEventListener("click", click5);
+*/
+
 
 let num1 = null;
 let num2 = null;
