@@ -7,16 +7,17 @@ body {
     border-color: pink;
     background-color: black;
     color: white;
-}
+    height: 300px;
+  }
   
-h1 {
+  h1 {
     margin-top: 0%;
-    margin-bottom: 25px;
-    border-style: solid;    
+    margin-bottom: 10px;
+    border-style: solid;
     border-color: lightblue;
-}
+  }
   
-button {
+  button {
     background-color: white;
     border-style: solid;
     width: 45%;
@@ -24,24 +25,29 @@ button {
     border-radius: 10px;
     border-color: lightblue;
     color: black;
-	height: 35px;
-}
+    height: 35px;
+    float: left;
+    font-size: 1em;
+  }
   
-#COUNT {
-	padding-left: 1%;
+  #COUNT {
+    padding-left: 1%;
     float: right;
     border-style: solid;
-    width: 44%;
+    width: 20%;
     border-color: lightblue;
-}
+  }
   
-#nug {
+  #nug {
     border-style: solid;
-    margin-top: 25px;
     margin-bottom: 3px;
     border-color: lightblue;
-}
-
-button:hover {
-	background-color: #e7e7e7;
-}
+    width: 12%;
+    float: left;
+    margin-left: 16%;
+  }
+  
+  button:hover {
+    background-color: #e7e7e7;
+  }
+  
