@@ -1,0 +1,4 @@
+- move buttons to bottom of the body
+- add frog from img in folder
+- make it so the box next to exp shows what level the animal is
+- make it so the button to upgrade says "{number} exp"
