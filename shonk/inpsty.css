@@ -1,0 +1,42 @@
+body {
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 1.5em;
+    border-style: solid;
+    padding: 5px;
+    border-color: pink;
+    background-color: black;
+    color: white;
+  }
+  
+  h1 {
+    margin-top: 0%;
+    margin-bottom: 25px;
+    border-style: solid;    
+    border-color: lightblue;
+  }
+  
+  #bnt {
+    background-color: white;
+    border-style: solid;
+    width: 45%;
+    text-align: center;
+    border-radius: 10px;
+    border-color: lightblue;
+    color: black;
+  }
+  
+  #COUNT {
+    float: right;
+    border-style: solid;
+    width: 45%;
+    border-color: lightblue;
+  }
+  
+  #nug {
+    border-style: solid;
+    margin-top: 25px;
+    margin-bottom: 3px;
+    border-color: lightblue;
+  }
+  
