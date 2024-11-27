@@ -1,4 +1,4 @@
-- move buttons to bottom of the body
-- add frog from img in folder
-- make it so the box next to exp shows what level the animal is
-- make it so the button to upgrade says "{number} exp"
+- clean up your damn messy ass css code + add comments
+- add frog / blahaj / transfem so it is actully a 
+- put everything in a div and make the background a gradient so the game looks like a window on a comupter
+- make it so the button for exp upgrade can go without a cap, but find a fix for the text spilling out or wrapping when the number gets too high

@@ -104,12 +104,12 @@ cheat.onclick = function() {
 function updateStats() {
     count.textContent = `${exp} XP`;
     nug.textContent = `Lvl: ${level}`;
-    purch.textContent = `buff: ${upgradeCost} XP`;
+    purch.textContent = `+1 lvl: ${upgradeCost} XP`;
     if (boostlvl < 5) {
-      X.textContent = ``
-    }
-    boost.textContent = `boost: ${expboostcost} XP`
-    X.textContent =  `X ${boostlvl}`
-}
-
-
+		boost.textContent = `boost: ${expboostcost} XP`;
+    } else {
+		boost.textContent = `Max`;
+	};
+    
+	X.textContent = `X ${boostlvl}`;
+};
