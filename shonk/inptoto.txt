@@ -1,4 +1,3 @@
 - clean up your damn messy ass css code + add comments
 - add frog / blahaj / transfem so it is actully a 
-- put everything in a div and make the background a gradient so the game looks like a window on a comupter
 - make it so the button for exp upgrade can go without a cap, but find a fix for the text spilling out or wrapping when the number gets too high

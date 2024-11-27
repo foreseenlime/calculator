@@ -38,7 +38,6 @@ var upgradeCost = 5;
 //check if cheats have been used
 var hadCheat = false;
 
-updateStats();
 
 //check for the user to see if they used cheats
 head.onclick = function() {
