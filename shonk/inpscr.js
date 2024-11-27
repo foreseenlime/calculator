@@ -53,6 +53,7 @@ btn.onclick = function() {
     	exp += 1 * boostlvl;
     	updateStats();
 
+		//wait function so the cooldown works
     	setTimeout(function() {
       		canAdd = true;
     	}, 1);
@@ -104,6 +105,9 @@ function updateStats() {
     count.textContent = `${exp} XP`;
     nug.textContent = `Lvl: ${level}`;
     purch.textContent = `+1 lvl: ${upgradeCost} XP`;
+
+	//if boost is level 1-4, show how much it costs, 
+	//if it is level 5, say it is at max level
     if (boostlvl < 5) {
 		boost.textContent = `boost: ${expboostcost} XP`;
     } else {
