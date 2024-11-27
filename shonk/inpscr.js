@@ -1,79 +1,115 @@
+//exp counter
 const count = document.getElementById("exp");
+
+//pat the shonk button
 const btn = document.getElementById("bnt");
+
+//level counter
 const nug = document.getElementById("level");
+
+//level +1 upgrade button
 const purch = document.getElementById("buy");
+
+//exp x2 boost button
 const boost = document.getElementById("expboost");
+
+//exp boost counter
 const X = document.getElementById("upg");
+
+//add exp cheat button
 const cheat = document.getElementById("cheat");
+
+//header
 const head = document.getElementById("head");
 
+
+//exp boost stuff
 var boostlvl = 1;
 var expboostcost = 10;
+
+//exp button stuff
 var exp = 0;
 var canAdd = true;
+
+//level upgrade stuff
 var level = 1;
 var upgradeCost = 5;
+
+//check if cheats have been used
 var hadCheat = false;
 
 updateStats();
 
+//check for the user to see if they used cheats
 head.onclick = function() {
-  console.log(hadCheat);
+  	console.log(hadCheat);
 };
 
 //pet shonk
 btn.onclick = function() {
   
-  if (canAdd === true) {
-    canAdd = false;
-    exp += 1 * boostlvl;
-    updateStats();
-    setTimeout(function() {
-      canAdd = true;
-    }, 1);
-  };
+  	if (canAdd === true) {
+
+    	canAdd = false;
+    	exp += 1 * boostlvl;
+    	updateStats();
+
+    	setTimeout(function() {
+      		canAdd = true;
+    	}, 1);
+
+  	};
 };
 
 //upgrade level
 purch.onclick = function() {
-  if (exp >= upgradeCost) {
-    exp -= upgradeCost;
-    upgradeCost += 5;
-    level += 1;
-    updateStats();
-  };
+
+  	if (exp >= upgradeCost) {
+
+    	exp -= upgradeCost;
+    	upgradeCost += 5;
+    	level += 1;
+    	updateStats();
+
+  	};
 };
 
 //purchace exp upgrade
 boost.onclick = function() {
   
-  //caps at a x5 boost
-  if (exp >= expboostcost && boostlvl < 5) {
-    exp -= expboostcost;
-    boostlvl += 1;
-    expboostcost *= 2;
-    updateStats();
-  };
+  	//caps at a x5 boost
+  	if (exp >= expboostcost && boostlvl < 5) {
+
+    	exp -= expboostcost;
+    	boostlvl += 1;
+    	expboostcost *= 2;
+    	updateStats();
+
+  	};
 };
 
 //cheat button
 let cheatAmount = 0
 cheat.onclick = function() {
-  hadCheat = true;
-  cheatAmount = window.prompt("HOW MUCH");
-  cheatAmount = parseInt(cheatAmount);
-  exp = cheatAmount;
-  updateStats();
+
+  	hadCheat = true;
+  	cheatAmount = window.prompt("HOW MUCH");
+  	cheatAmount = parseInt(cheatAmount);
+	exp = cheatAmount;
+  	updateStats();
+
 };
 
 //sets all the text on buttons and stuff to the right values
 function updateStats() {
-  count.textContent = `${exp} XP`;
-  nug.textContent = `Lvl: ${level}`;
-  purch.textContent = `buff: ${upgradeCost} XP`;
-  if ()
-  boost.textContent = `boost: ${expboostcost} XP`
-  X.textContent =  `X ${boostlvl}`
+    count.textContent = `${exp} XP`;
+    nug.textContent = `Lvl: ${level}`;
+    purch.textContent = `buff: ${upgradeCost} XP`;
+    if (boostlvl < 5) {
+      X.textContent = ``
+    }
+    boost.textContent = `boost: ${expboostcost} XP`
+    X.textContent =  `X ${boostlvl}`
 }
 
 
