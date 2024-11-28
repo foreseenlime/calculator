@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #background {
+	        border-style: solid;
+	        border-width: 2px;
+	        margin-inline: 24.5%
+        }
+
+        /*buttons at top of window*/
+        .barbtns {
+	        width: 40px;
+	        height: 25px;
+	        border-style: solid;
+        }
+
+        /*close button*/
+        #close {
+	        margin-left: 5px;
+        }
+
+        /*line between buttons and header*/
+        #line {
+	        border-style: solid;
+	        border-width: 5px;
+	        border-color: pink;
+        }
+
+        /*main window*/
+        #window {
+	        height: 500px;
+	        color: white;
+	        font-size: 2em;
+	        background-color: black;
+	
+            /*margin-left: 25%;
+            margin-right: 25%;*/
+	
+            border-style: solid;
+	        border-width: 6px;
+            border-color: pink;
+        }
+
+        /*window without buttons at the top*/
+        #mainwin {
+	        padding: 5px;
+        }
+
+        /*div for everything at the top*/
+        #bar {
+	        background-color: pink;
+	
+        }
+
+        /*body (everything / background)*/
+        body {
+	        height: 600px;
+	        background-image: linear-gradient(#a2e9fc, white);
+
+	        /* 
+	        TRANS FLAG BACKGROUND:
+
+	        background-image: linear-gradient(lightblue, pink, white, pink, lightblue);
+
+	        */
+        }
+
+        /*header (big text at top)*/
+        h1 {
+            margin-top: 0%;
+            margin-bottom: 6px;
+	
+	        padding-left: 8px;
+	
+            border-style: solid;
+            border-color: lightblue;
+        }
+
+        /*div for buttons at bottom of the window
+                ** DONT USE FOR STYLE **      */
+        #btns {
+  	        margin-top: 20px;
+  	        margin-inline: 5%;
+        }
+
+        /*feed shonk button*/
+        #feed {
+  	        margin-right: 20px;
+        }
+
+        /*purchase exp boost button*/
+        .expboost {
+  	        margin-top: 10px;
+        }
+
+        /*cheat button*/
+        #cheat {
+  	        margin-left: 20px;
+        }
+
+        /*style for all the buttons at the bottom*/
+        .buttons {
+            background-color: white;
+	        width: 45%;
+            height: 35px;
+            float: left;
+	
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 10px;
+            border-color: lightblue;
+	
+            text-align: center;
+            font-size: 1em;
+            font-size: 15px;
+            color: black;
+        }
+
+        /*exp counter*/
+        #exp {
+            float: right;
+            width: 101px;
+	
+            border-style: solid;
+            border-color: lightblue;
+	
+            padding-right: 3px;
+            padding-left: 3px;
+            text-align: right;
+        }
+
+        /*level counter*/
+        /*#level {
+            width: 90px;
+	
+            margin-bottom: 3px;
+            padding-left: 3px;
+	        padding-right: 3px;
+            float: left;
+	
+            border-style: solid;
+            border-color: lightblue;
+        }*/
+
+        /*shows what exp multiplier you have*/
+        #upg {
+  	        width: 70px;
+	
+  	        padding-left: 3px;
+  	        margin-left: 5px;
+	        float: left;
+	
+  	        border-style: solid;
+  	        border-color: lightblue;
+        }
+
+        /*hunger counter*/
+        #hungNum {
+	        width: 134px;
+	
+	        padding-left: 3px;
+	        float: left;
+	
+	        border-style: solid;
+	        border-color: lightblue;
+        }
+
+        /*hunger bar parent div*/
+        #progbar {
+	        margin-top: 265px;
+	        margin-left: 10px;
+	        margin-right: 18px;
+	
+	        /*border-style: solid;
+	        border-color: red;*/
+        }
+
+        /*hunger bar*/
+        #hungerBar {
+	        width: 100%;
+	
+	        border-style: solid;
+	        border-width: 4px;
+	        border-color: lightblue;
+	
+	        /*margin-inline: 5%;*/
+        }
+
+        /*button hover*/
+        button:hover {
+            background-color: #e7e7e7;
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+		
+        <!--main window-->
+        <div id="window">
+			
+            <!--bar at top with buttons that look like normal window buttons-->
+			<div id="bar">
+				
+				<div id="barBtns">
+					<button id="close" class="barbtns">X</button>
+					<button id="maxim" class="barbtns">■	</button>
+					<button id="minim" class="barbtns">---</button>
+				</div>
+				
+				<div id="line"></div>
+			</div>
+            
+            <!--main window contents (does not include top bar)-->
+			<div id="mainwin">
+                <h1 id="head">CLICKAHH</h1>
+				
+				<div id="hungNum">Hunger: 100</div>
+                <div id="exp">0 XP</div>
+                <div id="upg">X 1</div>
+				
+				<!--hunger bar-->
+				<div id="progbar">
+					<div id="hungerBar"></div>
+				</div>
+  
+                <!--buttons at the bottom for upgrades + exp adding-->
+                <div id="btns">
+                    <button id="feed" class="buttons">feed: 10 XP</button>
+                    <button id="bnt" class="buttons">pat</button>
+                    <button id="expboost" class="expboost buttons">boost: 10 XP</button>
+                    <button id="cheat" class="expboost buttons">CHEAT</button>
+                </div>
+
+            <!--main window close-->
+			</div>
+
+        <!--full window close-->
+        </div>
+        
+    <!--background div code-->
+    </div>
+    <script>
+        //exp counter
+        const count = document.getElementById("exp");
+
+        //pat the shonk button
+        const btn = document.getElementById("bnt");
+
+        //level counter
+        const nug = document.getElementById("level");
+
+        //feed shonk button
+        const feed = document.getElementById("feed");
+
+        //exp x2 boost button
+        const boost = document.getElementById("expboost");
+
+        //exp boost counter
+        const X = document.getElementById("upg");
+
+        //add exp cheat button
+        const cheat = document.getElementById("cheat");
+
+        //header
+        const head = document.getElementById("head");
+
+        //hunger bar
+        const hungBar = document.getElementById("hungerBar");
+
+        //hunger number counter
+        const hungNum = document.getElementById("hungNum")
+
+
+        //exp boost stuff
+        var boostlvl = 1;
+        var expboostcost = 10;
+
+        //exp button stuff
+        var exp = 0;
+        var canAdd = true;
+
+        //check if cheats have been used
+        var hadCheat = false;
+
+        //hunger stuff
+        var hunger = 100;
+        var foodCost = 10;
+
+        //1 second interval for hunger ticking down
+        setInterval(hungerDown, 2000);
+
+        //check for the user to see if they used cheats
+        head.onclick = function() {
+  	        console.log(hadCheat);
+        };
+
+        //pet shonk
+        btn.onclick = function() {
+  
+  	        if (canAdd === true) {
+
+    	        canAdd = false;
+    	        exp += 1 * boostlvl;
+    	        updateStats();
+
+		        //wait function so the cooldown works
+    	        setTimeout(function() {
+      		    canAdd = true;
+    	        }, 3000);
+
+  	        };
+        };
+
+        //tick down hunger
+        function hungerDown() {
+	        if (hunger != 0) {
+		        hunger -= 1;
+		        updateStats();
+	        };
+        };
+
+        //feed shonk
+        feed.onclick = function() {
+
+  	        if (exp >= foodCost && hunger < 100) {
+
+    	        exp -= foodCost;
+    	        hunger = Math.min(100, hunger + 20); //this code was stolen
+    	        updateStats();
+
+  	        };
+        };
+
+        //purchace exp upgrade
+        boost.onclick = function() {
+  
+  	        //caps at a x5 boost
+  	        if (exp >= expboostcost && boostlvl < 5) {
+
+    	        exp -= expboostcost;
+    	        boostlvl += 1;
+    	        expboostcost *= 2;
+    	        updateStats();
+
+  	        };
+        };
+
+        //cheat button
+        let cheatAmount = 0
+        cheat.onclick = function() {
+
+  	        hadCheat = true;
+  	        cheatAmount = window.prompt("HOW MUCH");
+  	        cheatAmount = parseInt(cheatAmount);
+	        exp = cheatAmount;
+  	        updateStats();
+	
+        };
+
+        //sets all the text on buttons and stuff to the right values
+        function updateStats() {
+	        //if boost is level 1-4, show how much it costs, 
+	        //if it is level 5, say it is at max level
+            if (boostlvl < 5) {
+		        boost.textContent = `boost: ${expboostcost} XP`;
+            } else {
+		        boost.textContent = `Max`;
+	        };
+
+            count.textContent = `${exp} XP`;
+	        hungNum.textContent = `Hunger: ${hunger}`
+	        hungBar.style.width = `${hunger}%`;
+	        X.textContent = `X ${boostlvl}`;
+        };
+    </script>
+</body>
+</html>
