@@ -25,7 +25,7 @@
 
 /*main window*/
 #window {
-	height: 500px;
+	height: 590px;
 	color: white;
 	font-size: 2em;
 	background-color: black;
@@ -51,8 +51,9 @@
 
 /*body (everything / background)*/
 body {
-	height: 600px;
+	height: 1000px;
 	background-image: linear-gradient(#a2e9fc, white);
+	font-size: 90%;
 
 	/* 
 	TRANS FLAG BACKGROUND:
@@ -151,9 +152,29 @@ h1 {
   	border-color: lightblue;
 }
 
+/*HOT GAL IMAGE*/
+#maddy {
+	height: 210px;
+	width: 275px;
+	scale: 1;
+	transition: transform 0.3s;
+}
+
+/*div for the HOT GAL*/
+#madsDiv {
+	margin-inline: 30%;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /*hunger counter*/
 #hungNum {
-	width: 134px;
+	width: 150px;
 	
 	padding-left: 3px;
 	float: left;
@@ -164,7 +185,7 @@ h1 {
 
 /*hunger bar parent div*/
 #progbar {
-	margin-top: 265px;
+	margin-top: 20px;
 	margin-left: 10px;
 	margin-right: 18px;
 	

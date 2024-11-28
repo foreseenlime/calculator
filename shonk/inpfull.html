@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MADDY</title>
     <style>
         #background {
 	        border-style: solid;
@@ -32,7 +32,7 @@
 
         /*main window*/
         #window {
-	        height: 500px;
+	        height: 590px;
 	        color: white;
 	        font-size: 2em;
 	        background-color: black;
@@ -58,8 +58,9 @@
 
         /*body (everything / background)*/
         body {
-	        height: 600px;
+	        height: 1000px;
 	        background-image: linear-gradient(#a2e9fc, white);
+            font-size: 90%;
 
 	        /* 
 	        TRANS FLAG BACKGROUND:
@@ -158,9 +159,29 @@
   	        border-color: lightblue;
         }
 
+        /*HOT GAL IMAGE*/
+        #maddy {
+            height: 210px;
+            width: 275px;
+            scale: 1;
+            transition: transform 0.3s;
+        }
+
+        /*div for the HOT GAL*/
+        #madsDiv {
+            margin-inline: 30%;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
         /*hunger counter*/
         #hungNum {
-	        width: 134px;
+	        width: 150px;
 	
 	        padding-left: 3px;
 	        float: left;
@@ -171,7 +192,7 @@
 
         /*hunger bar parent div*/
         #progbar {
-	        margin-top: 265px;
+	        margin-top: 20px;
 	        margin-left: 10px;
 	        margin-right: 18px;
 	
@@ -221,7 +242,12 @@
 				<div id="hungNum">Hunger: 100</div>
                 <div id="exp">0 XP</div>
                 <div id="upg">X 1</div>
-				
+
+                <!--HOT GAL IMAGE-->
+                <div id="madsDiv">
+                    <img src="maddy1.png" id="maddy">
+                </div>
+                    
 				<!--hunger bar-->
 				<div id="progbar">
 					<div id="hungerBar"></div>
@@ -274,6 +300,9 @@
         //hunger number counter
         const hungNum = document.getElementById("hungNum")
 
+        //pet image
+        const mads = document.getElementById("maddy");
+
 
         //exp boost stuff
         var boostlvl = 1;
@@ -298,23 +327,33 @@
   	        console.log(hadCheat);
         };
 
-        //pet shonk
+        //pet gal
         btn.onclick = function() {
   
   	        if (canAdd === true) {
 
+                animatePet();
     	        canAdd = false;
     	        exp += 1 * boostlvl;
     	        updateStats();
 
 		        //wait function so the cooldown works
     	        setTimeout(function() {
-      		    canAdd = true;
+      		        canAdd = true;
     	        }, 3000);
 
   	        };
         };
 
+        //animate gal
+        function animatePet() {
+            mads.style.transform = "scale(1.2)";
+            setTimeout(function() {
+                
+                mads.style.transform = "scale(1)";
+            }, 250);
+        };
+        
         //tick down hunger
         function hungerDown() {
 	        if (hunger != 0) {
@@ -323,7 +362,7 @@
 	        };
         };
 
-        //feed shonk
+        //feed gal
         feed.onclick = function() {
 
   	        if (exp >= foodCost && hunger < 100) {

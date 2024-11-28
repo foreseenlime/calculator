@@ -28,6 +28,9 @@ const hungBar = document.getElementById("hungerBar");
 //hunger number counter
 const hungNum = document.getElementById("hungNum")
 
+//pet image
+const mads = document.getElementById("maddy");
+
 
 //exp boost stuff
 var boostlvl = 1;
@@ -52,11 +55,12 @@ head.onclick = function() {
   	console.log(hadCheat);
 };
 
-//pet shonk
+//pet gal
 btn.onclick = function() {
   
   	if (canAdd === true) {
 
+		animatePet();
     	canAdd = false;
     	exp += 1 * boostlvl;
     	updateStats();
@@ -69,6 +73,15 @@ btn.onclick = function() {
   	};
 };
 
+//animate gal
+function animatePet() {
+	mads.style.transform = "scale(1.2)";
+	setTimeout(function() {
+		
+		mads.style.transform = "scale(1)";
+	}, 250);
+};
+
 //tick down hunger
 function hungerDown() {
 	if (hunger != 0) {
@@ -77,7 +90,7 @@ function hungerDown() {
 	};
 };
 
-//feed shonk
+//feed gal
 feed.onclick = function() {
 
   	if (exp >= foodCost && hunger < 100) {
