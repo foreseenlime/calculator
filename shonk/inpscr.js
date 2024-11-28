@@ -7,8 +7,8 @@ const btn = document.getElementById("bnt");
 //level counter
 const nug = document.getElementById("level");
 
-//level +1 upgrade button
-const purch = document.getElementById("buy");
+//feed shonk button
+const feed = document.getElementById("feed");
 
 //exp x2 boost button
 const boost = document.getElementById("expboost");
@@ -22,6 +22,12 @@ const cheat = document.getElementById("cheat");
 //header
 const head = document.getElementById("head");
 
+//hunger bar
+const hungBar = document.getElementById("hungerBar");
+
+//hunger number counter
+const hungNum = document.getElementById("hungNum")
+
 
 //exp boost stuff
 var boostlvl = 1;
@@ -31,13 +37,15 @@ var expboostcost = 10;
 var exp = 0;
 var canAdd = true;
 
-//level upgrade stuff
-var level = 1;
-var upgradeCost = 5;
-
 //check if cheats have been used
 var hadCheat = false;
 
+//hunger stuff
+var hunger = 100;
+var foodCost = 10;
+
+//1 second interval for hunger ticking down
+setInterval(hungerDown, 2000);
 
 //check for the user to see if they used cheats
 head.onclick = function() {
@@ -56,19 +64,27 @@ btn.onclick = function() {
 		//wait function so the cooldown works
     	setTimeout(function() {
       		canAdd = true;
-    	}, 1);
+    	}, 3000);
 
   	};
 };
 
-//upgrade level
-purch.onclick = function() {
+//tick down hunger
+function hungerDown() {
+	if (hunger != 0) {
+		hunger -= 1;
+		console.log(hunger);
+		updateStats();
+	};
+};
 
-  	if (exp >= upgradeCost) {
+//feed shonk
+feed.onclick = function() {
 
-    	exp -= upgradeCost;
-    	upgradeCost += 5;
-    	level += 1;
+  	if (exp >= foodCost && hunger < 100) {
+
+    	exp -= foodCost;
+    	hunger = Math.min(100, hunger + 20); //this code was stolen
     	updateStats();
 
   	};
@@ -97,14 +113,12 @@ cheat.onclick = function() {
   	cheatAmount = parseInt(cheatAmount);
 	exp = cheatAmount;
   	updateStats();
-
+	
 };
 
 //sets all the text on buttons and stuff to the right values
 function updateStats() {
     count.textContent = `${exp} XP`;
-    nug.textContent = `Lvl: ${level}`;
-    purch.textContent = `+1 lvl: ${upgradeCost} XP`;
 
 	//if boost is level 1-4, show how much it costs, 
 	//if it is level 5, say it is at max level
@@ -114,5 +128,7 @@ function updateStats() {
 		boost.textContent = `Max`;
 	};
     
+	hungNum.textContent = `Hunger: ${hunger}`
+	hungBar.style.width = `${hunger}%`;
 	X.textContent = `X ${boostlvl}`;
 };

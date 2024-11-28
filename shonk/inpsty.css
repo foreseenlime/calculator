@@ -1,3 +1,9 @@
+#background {
+	border-style: solid;
+	border-width: 3px;
+	margin-inline: 24.5%
+}
+
 /*buttons at top of window*/
 .barbtns {
 	width: 40px;
@@ -24,8 +30,8 @@
 	font-size: 2em;
 	background-color: black;
 	
-    margin-left: 25%;
-    margin-right: 25%;
+    /*margin-left: 25%;
+    margin-right: 25%;*/
 	
     border-style: solid;
 	border-width: 6px;
@@ -67,14 +73,15 @@ h1 {
     border-color: lightblue;
 }
 
-/*div for buttons at bottom of the window*/
+/*div for buttons at bottom of the window
+          ** DONT USE FOR STYLE **      */
 #btns {
-  	margin-top: 240px;
+  	margin-top: 20px;
   	margin-inline: 5%;
 }
 
-/*buy 1 level button*/
-#buy {
+/*feed shonk button*/
+#feed {
   	margin-right: 20px;
 }
 
@@ -88,7 +95,7 @@ h1 {
   	margin-left: 20px;
 }
 
-/*class for all the buttons at the bottom*/
+/*style for all the buttons at the bottom*/
 .buttons {
     background-color: white;
 	width: 45%;
@@ -102,14 +109,14 @@ h1 {
 	
     text-align: center;
     font-size: 1em;
-    font-size: 20px;
+    font-size: 15px;
     color: black;
 }
 
 /*exp counter*/
 #exp {
     float: right;
-    width: auto;
+    width: 101px;
 	
     border-style: solid;
     border-color: lightblue;
@@ -120,8 +127,8 @@ h1 {
 }
 
 /*level counter*/
-#level {
-    width: 77px;
+/*#level {
+    width: 90px;
 	
     margin-bottom: 3px;
     padding-left: 3px;
@@ -130,17 +137,50 @@ h1 {
 	
     border-style: solid;
     border-color: lightblue;
-}
+}*/
 
 /*shows what exp multiplier you have*/
 #upg {
   	width: 70px;
 	
   	padding-left: 3px;
-  	margin-left: 95px;
+  	margin-left: 5px;
+	float: left;
 	
   	border-style: solid;
   	border-color: lightblue;
+}
+
+/*hunger counter*/
+#hungNum {
+	width: 134px;
+	
+	padding-left: 3px;
+	float: left;
+	
+	border-style: solid;
+	border-color: lightblue;
+}
+
+/*hunger bar parent div*/
+#progbar {
+	margin-top: 265px;
+	margin-left: 10px;
+	margin-right: 18px;
+	
+	/*border-style: solid;
+	border-color: red;*/
+}
+
+/*hunger bar*/
+#hungerBar {
+	width: 100%;
+	
+	border-style: solid;
+	border-width: 4px;
+	border-color: lightblue;
+	
+	/*margin-inline: 5%;*/
 }
 
 /*button hover*/

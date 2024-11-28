@@ -1,3 +1,2 @@
 - add frog / blahaj / transfem so it is actully is the kinda game i was making
 - make it so the button for exp upgrade can go without a cap, but find a fix for the text spilling out or wrapping when the number gets too high
-- make a thing that ticks down every second
